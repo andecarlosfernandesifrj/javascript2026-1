@@ -13,6 +13,8 @@
       <p>Menu 3</p>
     </nav>
   </header>
+  <button>Ocultar div</button>
+  <button>Mostrar div</button>
   <main>
     <h2 id="titulo">Aula 3 - Javascript DOM</h2>
     <p class="comandos">getElementById</p>
@@ -52,10 +54,11 @@
     //7
     document.querySelector(".comandos").style.fontWeight = "bold";
     //8
-    //document.querySelector("div").style.borderRadius = "30px";
-    document.getElementsByTagName("div")[0].style.borderRadius = "30px";
-    document.querySelector("div").style.backgroundColor = "lightpink";
-    document.querySelector("div").style.color = "red";
+    //document.getElementsByTagName("div")[0].style.borderRadius = "30px";
+    let div = document.querySelector("div").style;
+    div.borderRadius = "30px";
+    div.backgroundColor = "lightpink";
+    div.color = "red";
   </script>
 </body>
 </html>
