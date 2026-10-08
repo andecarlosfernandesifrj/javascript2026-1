@@ -31,14 +31,15 @@
     <p id="ex6">6 - Alterar o tamanho do texto do primeiro exercicio utilizando querySelector.</p>
     <p id="ex7">7 - Alterar o texto para negrito do elemento da primeira classe "comandos" utilizando o querySelector.</p>
     <p id="ex8">8 - Alterar a div: arredondar as bordas, cor do fundo rosa claro, cor do texto vermelho.</p>
-    <p id="ex9">9 - </p>
+    <p id="ex9">9 - Alterar os exercícios 1 e 2 para variáveis.</p>
     <p id="ex10">10 - </p>
   </div>
   <script>
+    let item12 = document.getElementsByTagName("p");
     //1 
-    document.getElementsByTagName("p")[0].innerHTML = "Item 1";
+    item12[0].innerHTML = "Item 1";
     //2
-    document.getElementsByTagName("p")[1].innerHTML = "Item 2";
+    item12[1].innerHTML = "Item 2";
     //3
     document.getElementsByClassName("comandos")[0].innerHTML = document.getElementsByClassName("comandos")[0].innerHTML + "()";
     document.getElementsByClassName("comandos")[1].innerHTML = document.getElementsByClassName("comandos")[1].innerHTML + "()";
