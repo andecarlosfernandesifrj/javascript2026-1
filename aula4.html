@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <p>Menu 1</p>
+      <p>Menu 2</p>
+      <p>Menu 3</p>
+    </nav>
+  </header>
+  <button>Ocultar div</button>
+  <button>Mostrar div</button>
+  <main>
+    <h2 id="titulo">Aula 3 - Javascript DOM</h2>
+    <p class="comandos">getElementById</p>
+    <p class="comandos">getElementsByTagName</p>
+    <p class="comandos">getElementsByClassName</p>
+    <p>Comandos para pegar os elementos.</p>
+  </main>
+  <div>
+    <p id="ex1">1 - Alterar o texto do "Menu 1" para Item 1.</p>
+    <p id="ex2">2 - Alterar o texto do "Menu 2" para "Item 2" através da Tag.</p>
+    <p id="ex3">3 - Inserir parênteses () nos comandos da classe "comandos".</p>
+    <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
+    <p id="ex5">5 - Colocar uma borda na div com o querySelector.</p>
+    <p id="ex6">6 - Alterar o tamanho do texto do primeiro exercicio utilizando querySelector.</p>
+    <p id="ex7">7 - Alterar o texto para negrito do elemento da primeira classe "comandos" utilizando o querySelector.</p>
+    <p id="ex8">8 - Alterar a div: arredondar as bordas, cor do fundo rosa claro, cor do texto vermelho.</p>
+    <p id="ex9">9 - Alterar os exercícios 1 e 2 para variáveis.</p>
+    <p id="ex10">10 - Colocar os botões para funcionar</p>
+  </div>
+  <script>
+    //10
+    //botão 1
+    document.querySelectorAll("button")[0].addEventListener("click" , function() {
+      document.querySelectorAll("div")[0].style.display = "none";
+    });
+    //botão 2
+    document.querySelectorAll("button")[1].addEventListener("click" , function() {
+      document.querySelectorAll("div")[0].style.display = "block";
+    });
+  </script>
+</body>
+</html>
