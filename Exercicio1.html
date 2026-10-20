@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Bem-vindo ao site!</h1>
+  <button>Ocultar</button>
+  <script>
+    const msg = document.getElementsByTagName("h1")[0];
+    const botao = document.querySelector("button");
+    botao.addEventListener("click", function(){
+      if(msg.style.display === "none"){
+        msg.style.display = "block";
+        botao.textContent = "Ocultar";
+      }else{
+        msg.style.display = "none";
+        botao.textContent = "Mostrar";
+      }
+    })
+  </script>
+</body>
+</html>
