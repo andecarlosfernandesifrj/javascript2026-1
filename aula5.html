@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <input id="texto" type="text">
+    <button onclick="adicionar();">Adicionar</button>
+  <script>
+    function adicionar(){
+      const divNova = document.createElement("div");
+      const h2Nova = document.createElement("h2");
+      const texto = document.getElementById("texto").value;
+      h2Nova.innerHTML = texto;
+      divNova.appendChild(h2Nova);
+      divNova.style.border = "2px solid red";
+      document.body.appendChild(divNova);
+    }
+  </script>
+  
+</body>
+</html>
