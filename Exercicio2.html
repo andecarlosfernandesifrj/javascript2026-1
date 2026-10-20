@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="nome">Digite o nome:</label>
+  <input type="text" id="nome">
+  <button id="continuar" disabled>Continuar</button>
+
+  <script>
+    const nome = document.querySelector("#nome");
+    const continuar = document.querySelector("#continuar");
+    nome.addEventListener("input", function(){
+      if(nome.value.trim().length >= 5)
+        continuar.disabled = false;
+      else
+        continuar.disabled = true;
+    })
+  </script>
+</body>
+</html>
