@@ -17,6 +17,13 @@
       divNova.appendChild(h2Nova);
       divNova.style.border = "2px solid red";
       document.body.appendChild(divNova);
+
+      const btRemover = document.createElement("button");
+      btRemover.innerHTML = "Remover";
+      divNova.appendChild(btRemover);
+      btRemover.addEventListener('click', function(){
+          divNova.remove();
+      })
     }
   </script>
   
