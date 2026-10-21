@@ -1,0 +1,48 @@
+<!-- 
+ Exercício 3 - Ampliar e reduzir uma imagem
+ Inserir uma imagem no site (HTML)
+ Inserir um botão para ampliar a imagem de 30 em 30 pixels
+ Inserir um botão para reduzir a imagem de 30 em 30 pixels
+ o tamanho minimo da imagem deve ser 200 pixels
+ o tamanho máximo da imagem deve ser 800 pixels
+ Exiba, abaixo da imagem, um texto h3 com a informação do tamanho atual da imagem
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3</title>
+</head>
+<body>
+  <img src="js.jpg" width="200px">
+  <br>
+  <button id="ampliar">Ampliar</button>
+  <button id="reduzir">Reduzir</button>
+  <br>
+  <h3>Tamanho: <span id="tam">200</span></h3>
+  <script>
+     let foto = document.getElementsByTagName("img")[0];
+     let btAmpliar = document.getElementById("ampliar");
+     let btReduzir = document.getElementById("reduzir");
+     let tam = document.getElementById("tam");
+     btAmpliar.addEventListener("click", function(){
+       if(foto.width <= 770)      
+         foto.width = foto.width + 30;
+     tam.innerHTML = foto.width;
+     })
+     btReduzir.addEventListener("click", function(){
+       if(foto.width >= 230)
+          foto.width = foto.width - 30;
+     tam.innerHTML = foto.width;
+     })
+     let btRedefinir = document.createElement("button");
+     btRedefinir.textContent = "Redefinir";
+     document.body.appendChild(btRedefinir);
+     btRedefinir.addEventListener("click", function(){
+       foto.width = 200;
+       tam.innerHTML = foto.width;
+     })
+  </script>
+</body>
+</html>
