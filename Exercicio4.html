@@ -18,8 +18,7 @@
     const telefone = document.getElementById("telefone");
     const lista  = document.getElementById("lista");
     const botao = document.getElementById("cadastrar");
-  
-    let contato = {
+      let contato = {
         nome: nome.value,
         telefone: telefone.value
       };
@@ -29,10 +28,10 @@
       let n=nome.value;
       let t = telefone.value;
       if(n === "" || t === ""){
-        //alert("Preencha os campos!");
+        alert("Preencha os campos!");
         return;
       }
-      let contato = {
+      contato = {
         nome: n,
         telefone: t
       };
@@ -48,7 +47,6 @@
       contatos.forEach(function(){
       let item = document.createElement("li");
       item.textContent = contato.nome + " - " + contato.telefone;
-   console.log(item.textContent);
       lista.appendChild(item);
       });
     }
