@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Contatos</h2>
+  <input id="nome" type="text" placeholder="Nome">
+  <input id="telefone" type="text" placeholder="Telefone">
+  <button id="cadastrar">Cadastrar</button>
+  <ul id="lista"></ul>
+
+  <script>
+    let contatos = [];
+    const nome = document.querySelector("#nome");
+    const telefone = document.getElementById("telefone");
+    const lista  = document.getElementById("lista");
+    const botao = document.getElementById("cadastrar");
+  
+    let contato = {
+        nome: nome.value,
+        telefone: telefone.value
+      };
+    botao.addEventListener("click", cadastrarContato);
+
+    function cadastrarContato(){
+      let n=nome.value;
+      let t = telefone.value;
+      if(n === "" || t === ""){
+        //alert("Preencha os campos!");
+        return;
+      }
+      let contato = {
+        nome: n,
+        telefone: t
+      };
+      
+      contatos.push(contato);
+      
+      mostrarContatos();
+      nome.value = "";
+      telefone.value = "";
+    }
+    function mostrarContatos(){
+      lista.innerHTML = "";
+      contatos.forEach(function(){
+      let item = document.createElement("li");
+      item.textContent = contato.nome + " - " + contato.telefone;
+   console.log(item.textContent);
+      lista.appendChild(item);
+      });
+    }
+    
+    
+  </script>
+</body>
+</html>
