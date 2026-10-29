@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f2f2f2;
+        }
+
+        .produtos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background: white;
+            padding: 15px;
+            width: 180px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .produto img {
+            width: 150px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        #carrinho {
+            background: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Minha Loja</h1>
+    <h2>Produtos</h2>
+    <div class="produtos">
+        <div class="produto" onclick="adicionarCarrinho(0)">
+            <img src="https://placehold.co/150x120?text=Notebook"
+                 alt="Notebook">
+            <h3>Notebook</h3>
+            <p>R$ 2.500,00</p>
+        </div>
+
+        <div class="produto" onclick="adicionarCarrinho(1)">
+            <img src="https://placehold.co/150x120?text=Celular"
+                 alt="Celular">
+            <h3>Celular</h3>
+            <p>R$ 1.200,00</p>
+        </div>
+
+        <div class="produto" onclick="adicionarCarrinho(2)">
+            <img src="https://placehold.co/150x120?text=Fone"
+                 alt="Fone de ouvido">
+            <h3>Fone de ouvido</h3>
+            <p>R$ 150,00</p>
+        </div>
+
+    </div>
+
+    <button onclick="mostrarCarrinho()">
+        Ver carrinho
+    </button>
+    <div id="carrinho"></div>
+
+    <script>
+        // Vetor com os produtos da loja
+        const produtos = [
+            { nome: "Notebook", preco: 2500 },
+            { nome: "Celular", preco: 1200 },
+            { nome: "Fone de ouvido", preco: 150 }
+        ];
+
+        // Vetor que armazenará os produtos escolhidos
+        const carrinho = [];
+
+        // Adiciona um produto ao carrinho
+        function adicionarCarrinho(indice) {
+            carrinho.push(produtos[indice]);
+
+            alert(produtos[indice].nome + " adicionado ao carrinho!");
+        }
+
+        // Mostra os produtos do carrinho
+        function mostrarCarrinho() {
+            const areaCarrinho = document.querySelector("#carrinho");
+
+            areaCarrinho.innerHTML = "<h2>Meu Carrinho</h2>";
+
+            if (carrinho.length === 0) {
+                areaCarrinho.innerHTML += "<p>O carrinho está vazio.</p>";
+                return;
+            }
+
+            let total = 0;
+
+            for (let i = 0; i < carrinho.length; i++) {
+                areaCarrinho.innerHTML += `
+                    <p>
+                        ${carrinho[i].nome} -
+                        R$ ${carrinho[i].preco.toFixed(2).replace(".", ",")}
+                    </p>
+                `;
+
+                total += carrinho[i].preco;
+            }
+
+            areaCarrinho.innerHTML += `
+                <hr>
+                <h3>
+                    Total: R$ ${total.toFixed(2).replace(".", ",")}
+                </h3>
+            `;
+        }
+    </script>
+
+</body>
+</html>
