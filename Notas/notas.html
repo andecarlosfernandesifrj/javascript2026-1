@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloco de Notas</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 95%;
+            height: 120px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #mensagem {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Bloco de Notas</h1>
+
+        <textarea id="nota"
+            placeholder="Digite sua anotação..."></textarea>
+
+        <br>
+
+        <button onclick="salvarNota()">Salvar</button>
+        <button onclick="carregarNota()">Carregar</button>
+        <button onclick="apagarNota()">Apagar</button>
+
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        const campoNota = document.querySelector("#nota");
+        const mensagem = document.querySelector("#mensagem");
+
+        // Salva a anotação
+        function salvarNota() {
+            localStorage.setItem("minhaNota", campoNota.value);
+
+            mensagem.textContent = "Nota salva com sucesso!";
+        }
+
+        // Recupera a anotação salva
+        function carregarNota() {
+            const notaSalva = localStorage.getItem("minhaNota");
+
+            if (notaSalva !== null) {
+                campoNota.value = notaSalva;
+                mensagem.textContent = "Nota carregada!";
+            } else {
+                mensagem.textContent = "Nenhuma nota foi salva.";
+            }
+        }
+
+        // Apaga a anotação salva
+        function apagarNota() {
+            localStorage.removeItem("minhaNota");
+
+            campoNota.value = "";
+            mensagem.textContent = "Nota apagada!";
+        }
+
+        // Carrega a nota automaticamente ao abrir a página
+        carregarNota();
+    </script>
+
+</body>
+</html>

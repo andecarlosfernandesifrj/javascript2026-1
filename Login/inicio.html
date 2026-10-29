@@ -6,14 +6,11 @@
     <title>Início</title>
 </head>
 <body>
-
     <h1 id="mensagem"></h1>
-
     <a href="perfil.html">Ir para o perfil</a>
 
     <script>
         let usuario = localStorage.getItem("usuario");
-
         if (usuario === "") {
             window.location.href = "login.html";
         } else {
@@ -21,6 +18,5 @@
                 "Bem-vindo, " + usuario + "!";
         }
     </script>
-
 </body>
 </html>

@@ -8,14 +8,11 @@
 <body>
 
     <h1>Meu Perfil</h1>
-
     <p id="mensagem"></p>
-
     <a href="inicio.html">Voltar ao início</a>
 
     <script>
         let usuario = localStorage.getItem("usuario");
-
         if (usuario === null) {
             window.location.href = "login.html";
         } else {
